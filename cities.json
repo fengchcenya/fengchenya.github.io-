@@ -1,0 +1,44 @@
+    
+[
+  {
+    "id": "101",
+    "name": "北京",
+    "iconUrl": "img/beijing.png"
+  },
+  {
+    "id": "102",
+    "name": "上海",
+    "iconUrl": "img/shanghai.png"
+  },
+  {
+    "id": "103",
+    "name": "广州",
+    "iconUrl": "img/guangzhou.png"
+  },
+  {
+    "id": "104",
+    "name": "深圳",
+    "iconUrl": "img/shenzhen.png"
+  },
+  {
+    "id": "105",
+    "name": "杭州",
+    "iconUrl": "img/hangzhou.png"
+  },
+  {
+    "id": "106",
+    "name": "西安",
+    "iconUrl": "img/xian.png"
+  },
+  {
+    "id": "107",
+    "name": "武汉",
+    "iconUrl": "img/wuhan.png"
+  },
+  {
+    "id": "108",
+    "name": "南京",
+    "iconUrl": "img/nanjing.png"
+  }
+]
+    
