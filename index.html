@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>天气应用</title>
+  <link rel="stylesheet" href="css/style.css">
+    <!-- 在 head 中引入 -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<div id="particles-js"></div>
+</head>
+<body>
+  <h1>城市天气</h1> 
+  <div id="city-container"></div> 
+  <div id="weather-container"></div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="script.js"></script>
+</body>
+<script>
+  particlesJS("particles-js", {
+    "particles": {
+      "number": { "value": 80 },
+      "color": { "value": "#ffffff" },
+      "shape": { "type": "circle" },
+      "opacity": { "value": 0.5 },
+      "size": { "value": 3 },
+      "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.4, "width": 1 },
+      "move": { "enable": true, "speed": 1 }
+    },
+    "interactivity": {
+      "events": {
+        "onhover": { "enable": true, "mode": "repulse" },
+        "onclick": { "enable": true, "mode": "push" }
+      }
+    }
+  });
+</script>
+</html>
