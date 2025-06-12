@@ -1,0 +1,223 @@
+/* 容器使用 Flex 布局并允许换行 */
+#city-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+/* 默认样式：每行 3 个城市（适用于 >900px 的屏幕） */
+.city-item {
+    flex: 0 0 calc(33.33% - 10px); /* 每行 3 个，减去间距 */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 15px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* 屏幕宽度在 600px - 900px 之间时：每行 2 个城市 */
+@media (max-width: 900px) and (min-width: 600px) {
+    .city-item {
+        flex: 0 0 calc(50% - 10px); /* 每行 2 个，减去间距 */
+    }
+}
+
+/* 屏幕宽度小于 600px 时：每行 1 个城市 */
+@media (max-width: 599px) {
+    .city-item {
+        flex: 0 0 100%; /* 每行 1 个 */
+    }
+}
+/* 鼠标悬停效果 */
+.city-item:hover {
+  background-color: #f0f0f0; /* 背景颜色变化 */
+  transform: scale(1.03);    /* 微微放大 */
+  border-color: #888;        /* 边框颜色变化 */
+}
+
+/* 点击时的效果（可选） */
+.city-item:active {
+  transform: scale(0.98);
+}
+.city-item img.city-icon {
+  width: 80px;   /* 原来是 50px */
+  height: 80px;  /* 原来是 50px */
+  object-fit: contain;
+  margin-bottom: 6px;
+  transition: transform 0.2s ease;
+}
+
+.city-item img.city-icon:hover {
+  transform: scale(1.1); /* 鼠标悬停时稍微放大 */
+}
+ 
+#weather-container {
+    margin-top: 20px;
+}
+    
+.weather-card {
+    padding: 20px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+    
+.weather-icon {
+    width: 80px;
+    height: 80px;
+}
+/* 全局样式 */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #f7f9fc;
+  color: #333;
+  line-height: 1.6;
+}
+
+.app-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem;
+}
+
+.app-header h1 {
+  text-align: center;
+  font-weight: 600;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+/* 城市列表区域 */
+.city-section h2,
+.weather-section h2 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: #555;
+}
+.city-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+.city-icon {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin: auto;
+  margin-bottom: 0.5rem;
+}
+
+.city-name {
+  font-size: 1.1rem;        /* 稍微加大字体 */
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+/* 天气卡片样式 */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+#city-section {
+  margin-bottom: 3rem;
+}
+
+.city-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.weather-card-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  animation: fadeInUp 0.6s ease-in-out;
+}
+
+.weather-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+  width: 300px;
+  text-align: center;
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.weather-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+}
+
+.weather-icon {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.weather-city {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.weather-temperature {
+  font-size: 2.2rem;
+  color: #ffd700;
+  margin: 0.5rem 0;
+}
+
+.weather-description {
+  font-size: 1rem;
+  text-transform: capitalize;
+}
+.dark-mode .weather-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  color: #eee;
+}
+
+.dark-mode .weather-temperature {
+  color: #ffd700;
+}
+/* 动画 */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* 基础 body 样式 */
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+}
